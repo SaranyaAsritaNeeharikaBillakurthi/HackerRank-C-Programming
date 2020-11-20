@@ -1,1 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
+int main()
+{
+      int i,j;
+   float f,g;
+   scanf("%d",&i);
+   scanf("%d",&j);
+   printf("%d %d\n",i + j,i - j);
+
+   scanf("%f",&f);
+   scanf("%f",&g);
+   printf("%.1f %.1f",f + g,f - g);	
+    
+    return 0;
+}
