@@ -11,3 +11,30 @@ int* total_number_of_books;
  * The rows represent the shelves and the columns represent the books.
  */
 int** total_number_of_pages;
+
+
+int main()
+{
+    int total_number_of_shelves;
+    scanf("%d", &total_number_of_shelves);
+    
+    int total_number_of_queries;
+    scanf("%d", &total_number_of_queries);
+     
+     total_number_of_books = (int *) calloc(sizeof(int), total_number_of_shelves);
+     total_number_of_pages = (int **) calloc(sizeof(int *), total_number_of_shelves);
+    
+    while (total_number_of_queries--) {
+        int type_of_query;
+        scanf("%d", &type_of_query);
+        
+        if (type_of_query == 1) {
+            /*
+             * Process the query of first type here.
+             */
+            int shelf,pages;
+            scanf("%d %d", &shelf, &pages);
+
+            total_number_of_books[shelf]++;
+            total_number_of_pages[shelf] = realloc(total_number_of_pages[shelf],sizeof(int *) * total_number_of_books[shelf]);
+            total_number_of_pages[shelf][total_number_of_books[shelf] - 1] = pages;
